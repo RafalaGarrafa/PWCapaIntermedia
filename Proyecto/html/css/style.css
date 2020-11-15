@@ -1,0 +1,5 @@
+body {background-color: #222222}
+.div_juego {color: white; background-color: #0f0f0f; border: 3px dotted #2dc05e;}
+#div_anadir {color: white;}
+.div_tarjetajuego {float: left; width: 150px; height: 250px; border: 3px dotted #0f0f0f; color: white; background-color: #2dc05e;}
+h2, h3 {color: white;}

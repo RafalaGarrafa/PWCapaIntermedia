@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+body{
+    background-image: url(../art/BGBK.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    overflow: hidden;
+
+}
+
+
+.formulario{
+    background: rgba(0, 0, 0, 0.808);
+    padding: 20px;
+    border-radius: 27px;
+    box-shadow: 0 0 70px rgba(97, 95, 95, 0.568);
+    top: 150px;
+
+}
+.form-control{
+    background: rgba(56, 56, 56, 0.486);
+    border-radius: 27px;
+    border-style: none; 
+    transition: 00.5s ease-in;
+    outline: none;
+    box-shadow: none;
+
+}
+.form-control:focus{
+    background: none;
+    outline: none;
+    box-shadow: none;
+    color:white;
+}
+
+.form-control::placeholder{
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.ingresar{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    font-size: 27px;
+    color: white;
+    font-weight: 700!important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    transition: 0.5s ease-in;
+    border-radius: 27px;
+}
+
+.ingresar:hover{
+    background: rgba(255, 255, 255, 0.7);
+
+}
+
+.recordar{
+    color: rgb(65, 65, 65);
+    text-decoration: none;
+    padding-right: 17px;
+}
+
+.recordar:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+

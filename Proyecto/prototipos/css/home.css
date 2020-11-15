@@ -1,0 +1,87 @@
+  
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    background-image: url(../art/BG.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 900px;
+}
+
+.contenedor-lista {
+	background: #111111cc;
+	box-shadow: 0px 0px 20px rgb(27, 27, 27);
+	border-radius: 30px;
+}
+
+.contenedor-lista h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+	background: #fff;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	padding: 40px;
+	border-radius: 30px 30px 0 0;
+	margin-bottom: 0;
+}
+
+.lista {
+	padding: 40px;
+	width: 100%;
+}
+
+.lista .listados {
+	background: rgba(255, 255, 255, 0.075);
+	display: grid;
+	grid-template-columns: auto 1fr 1fr 1fr;
+	align-items: center;
+	padding: 20px;
+	border-radius: 27px;
+    margin-bottom: 20px;
+    color: #727272; 
+}
+
+.contenido{
+    text-align: right;
+}
+
+.lista .label {
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 5px;
+    color: #9b06ff;
+    font-weight: bold;
+}
+
+.lista .dato {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.lista a {
+    text-decoration: none;
+    color: #727272; ;
+}
+
+.lista a:hover{
+    color: #ffffff; ;
+}

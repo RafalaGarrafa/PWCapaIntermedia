@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="js/libs/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+		
+		$(document).ready(function()
+		{
+			$("#div_anadir").hide();
+
+			$("#btn_anj").click(function()
+				{
+					$("#div_anadir").show();
+
+				});
+
+			$("#btn_ald").click(function()
+				{
+					$("#div_anadir").hide();
+					AnadirJuego($("#ipt_NombreJ").val(), $("#ipt_DescrJ").val(), $("#ipt_ImgJ").val(), $("#ipt_PrecioJ").val());
+
+					$("#ipt_NombreJ").val("");
+					$("#ipt_DescrJ").val("");
+					$("#ipt_ImgJ").val("");
+					$("#ipt_PrecioJ").val("");
+				});
+
+			$("body").on("click", ".btn_tar_ald", function()
+			{
+
+				var nombre = $(this).parent().find(".lbl_NombreTJ").text();
+				var desc = $(this).parent().find(".lbl_DescTJ").text();
+				var imag = $(this).parent().find(".lbl_ImgTJ").attr("src");
+				var precio = $(this).parent().find(".lbl_PrecioTJ").text();
+
+				AnadirALista(nombre, desc, imag, precio);
+
+			});
+
+			$("body").on("click", ".btn_compralista", function()
+			{
+
+				$(this).parent().remove();
+
+			});
+
+			function AnadirALista(Nom, Des, Img, Pre)
+			{
+
+				var fechaAc = new Date();
+				var dia = fechaAc.getDate();
+				var mes = fechaAc.getMonth() + 1;
+				var anio = fechaAc.getFullYear();
+				var fechaAd =  dia + "/" + mes + "/" + anio;
+
+				var Nombre = Nom;
+				var Descripcion = Des;
+				var Imag = Img;
+				var Precio = Pre;
+
+				var DivListaJuego = "<div class = 'div_juego'><label>" + Nombre + "</label><br><label>" + Descripcion + "</label><br><img src="+ Imag + "><label>Fecha de Adición: " + fechaAd + "<br></label><label>" + Precio + "</label><button class = 'btn_compralista'>Comprar</button></div>"
+
+
+				$("#div_lista_juegos").append(DivListaJuego);
+			}
+
+			function AnadirJuego(Nom, Des, Img, Pre)
+			{
+
+				var Nombre = Nom;
+				var Descripcion = Des;
+				var Imag =  "img/" + Img + ".jpg";
+				var Precio = Pre;
+
+				var DivJuego = "<div class ='div_tarjetajuego'><label class = 'lbl_NombreTJ'>" + Nom + "</label><br><label class = 'lbl_DescTJ'>" + Des + "</label><br><img src=" + Imag + " class = 'lbl_ImgTJ' width = '150px' height = '190px'><br><label class = 'lbl_PrecioTJ'>$" + Pre + "</label><br><button  class = 'btn_tar_ald'>Añadir a Lista de Deseados</button></div>"
+
+
+				$("#div_juegosdisps").append(DivJuego);
+			}
+		});
+		
+
+	</script>
+</head>
+<body>
+	<h2>Lista de Deseados</h2>
+	<div id = "div_lista_juegos">
+		
+	</div>
+
+
+	
+
+	<h3>Juegos Disponibles</h3>
+
+	<div id = "div_juegosdisps">
+		
+	</div>
+
+	<button id = "btn_anj">Añadir Nuevo Juego</button>
+
+	<div id = "div_anadir">
+		<br><label>Nuevo Juego:</label><br><br>
+		<label>Nombre Juego</label><br>
+		<input type="text" name="" id = "ipt_NombreJ"><br>
+		<label>Descripcion</label><br>
+		<input type="text" name="" id = "ipt_DescrJ"><br>
+		<label>Imagen</label><br>
+		<input type="text" name="" id = "ipt_ImgJ"><br>
+		<label>Precio</label><br>
+		<input type="text" name="" id = "ipt_PrecioJ"><br>
+		<button id = "btn_ald">Añadir a Lista de Juegos</button>
+	</div>
+
+
+</body>
+</html>
