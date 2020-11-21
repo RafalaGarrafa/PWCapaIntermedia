@@ -18,6 +18,9 @@ class GamesRoutes
         this.router.put('/:id', gamesController.update);
         this.router.delete('/:id', gamesController.delete);
 
+        //this.router.get('/:id', gamesController.getUserWishlist);
+        
+
     }
 }
 

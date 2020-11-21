@@ -6,7 +6,7 @@ class GamesController
     public async list (req: Request, res: Response)
     {
         // id, titulo, descripcion, imagen, fecha_creacion
-        const games = await pool.query('select id, titulo, descripcion, imagen, fecha_creacion from games');
+        const games = await pool.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games');
 
         res.json(games);
         
@@ -45,7 +45,7 @@ class GamesController
     {
         const { id }  = req.params;
 
-        const juego = await pool.query('select id, titulo, descripcion, imagen, fecha_creacion from games where id = ?', [id]);
+        const juego = await pool.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games where id = ?', [id]);
 
         if(juego.length > 0)
         {
@@ -59,6 +59,13 @@ class GamesController
         res.json('juego encontrado');
 
     }
+
+    /*
+    public async getUserWishList(req: Request, res: Response)
+    {
+        //Get User WishList
+    }
+    */
 }
 
 const gamesController = new GamesController();
