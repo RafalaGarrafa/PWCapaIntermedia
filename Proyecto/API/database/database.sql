@@ -2,7 +2,6 @@
 
 use api;
 
-drop table if exists game;
 drop table if exists games;
 
 create table if not exists games
@@ -12,10 +11,9 @@ create table if not exists games
     descripcion varchar(255),
     imagen varchar(255),
     precio varchar(10),
-    comprado bit default false,
+    comprado int default 0,
     fecha_creacion timestamp default current_timestamp
 );
 
-rename table game to games;
 
 describe games;

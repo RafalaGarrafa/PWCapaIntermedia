@@ -24,6 +24,10 @@ const routes: Routes = [
     component: GameFormComponent
   },
   {
+    path: 'games/buy/:id',
+    component: WishListComponent
+  },
+  {
     path: 'games/wish',
     component: WishListComponent
   }

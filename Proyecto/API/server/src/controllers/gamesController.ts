@@ -6,7 +6,7 @@ class GamesController
     public async list (req: Request, res: Response)
     {
         // id, titulo, descripcion, imagen, fecha_creacion
-        const games = await pool.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games');
+        const games = await pool.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games where comprado = false');
 
         res.json(games);
         
@@ -40,6 +40,17 @@ class GamesController
         res.json({text: 'juego ' + req.params.id + ' actualizado'});
 
     }
+    
+    public async buy(req: Request, res: Response)
+    {
+        const { id }  = req.params;
+
+        await pool.query('update games set comprado = 1 where id = ?', [req.body, id]);
+
+        res.json({text: 'juego ' + req.params.id + ' comprado'});
+
+    }
+    
 
     public async getOne (req: Request, res: Response)
     {

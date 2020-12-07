@@ -16,6 +16,7 @@ class GamesRoutes
         this.router.get('/:id', gamesController.getOne);
         this.router.post('/', gamesController.create);
         this.router.put('/:id', gamesController.update);
+        this.router.put('/:id', gamesController.buy);
         this.router.delete('/:id', gamesController.delete);
 
         //this.router.get('/:id', gamesController.getUserWishlist);

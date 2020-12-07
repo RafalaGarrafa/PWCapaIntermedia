@@ -2,8 +2,8 @@
     <div class="card text-center">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
             {{game.titulo}}
-            <button class = "btn btn-success">
-                <i class="fas fa-dollar-sign"></i>
+            <button class = "btn btn-success" (click)="deleteGame(game.id)">
+                <i class="far fa-trash-alt"></i>
             </button>
         </div>
         <img [src]="game.imagen" class = "card-img-top" alt="">
@@ -16,9 +16,13 @@
                 ${{game.precio}}
             </p>
 
-            <a [routerLink] = "['/games/edit', game.id]" class = "btn btn-info btn-block">
-                EDITAR JUEGO
-            </a>
+            <p>
+                {{game.id}}
+            </p>
+
+            <button (click)="buyGame(game.id)" class = "btn btn-info btn-block">
+                COMPRAR JUEGO
+            </button>
         </div>
     </div>
 </div>

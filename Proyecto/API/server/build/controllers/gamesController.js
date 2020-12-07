@@ -17,7 +17,7 @@ class GamesController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             // id, titulo, descripcion, imagen, fecha_creacion
-            const games = yield database_1.default.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games');
+            const games = yield database_1.default.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games where comprado = false');
             res.json(games);
         });
     }
@@ -40,6 +40,13 @@ class GamesController {
             const { id } = req.params;
             yield database_1.default.query('update games set ? where id = ?', [req.body, id]);
             res.json({ text: 'juego ' + req.params.id + ' actualizado' });
+        });
+    }
+    buy(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('update games set comprado = 1 where id = ?', [req.body, id]);
+            res.json({ text: 'juego ' + req.params.id + ' comprado' });
         });
     }
     getOne(req, res) {
