@@ -4,7 +4,8 @@ exports.default = {
     database: {
         host: 'localhost',
         user: 'root',
-        password: '',
-        database: 'api'
+        password: 'W00W00W00nitro',
+        database: 'api',
+        port: 3307
     }
 };

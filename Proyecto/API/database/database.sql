@@ -5,7 +5,7 @@ use api;
 drop table if exists game;
 drop table if exists games;
 
-create table if not exists game
+create table if not exists games
 (
     id int(11) NOT NULL auto_increment primary key,
     titulo varchar(180),
