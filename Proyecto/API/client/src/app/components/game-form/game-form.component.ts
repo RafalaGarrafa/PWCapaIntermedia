@@ -34,6 +34,7 @@ export class GameFormComponent implements OnInit {
       .subscribe(
          res =>
          {
+          console.log("juego");
           console.log(res);
           this.game = res;
           this.edit = true;

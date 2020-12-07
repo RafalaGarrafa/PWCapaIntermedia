@@ -21,6 +21,13 @@ class GamesController {
             res.json(games);
         });
     }
+    listNotBought(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // id, titulo, descripcion, imagen, fecha_creacion
+            const games = yield database_1.default.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games ');
+            res.json(games);
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);
@@ -56,6 +63,7 @@ class GamesController {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             const juego = yield database_1.default.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games where id = ?', [id]);
+            console.log("juegoef");
             if (juego.length > 0) {
                 return res.json(juego[0]);
             }

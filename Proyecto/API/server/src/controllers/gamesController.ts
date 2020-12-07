@@ -12,6 +12,15 @@ class GamesController
         
     }
 
+    public async listNotBought (req: Request, res: Response)
+    {
+        // id, titulo, descripcion, imagen, fecha_creacion
+        const games = await pool.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games ');
+
+        res.json(games);
+        
+    }
+
     public async create(req: Request, res: Response): Promise<void>
     {
         console.log(req.body);
@@ -61,6 +70,7 @@ class GamesController
         const { id }  = req.params;
 
         const juego = await pool.query('select id, titulo, descripcion, imagen, precio, fecha_creacion from games where id = ?', [id]);
+        console.log("juegoef");
 
         if(juego.length > 0)
         {

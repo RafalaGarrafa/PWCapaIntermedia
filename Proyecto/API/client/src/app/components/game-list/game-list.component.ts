@@ -19,7 +19,7 @@ export class GameListComponent implements OnInit {
 
   getGames()
   {
-    this.gameService.getGames().subscribe(
+    this.gameService.getNotBoughtGames().subscribe(
       res => {
         this.games = res;
       },
