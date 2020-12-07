@@ -38,9 +38,9 @@ export class GamesService {
     return this.http.put(`${this.api_url}/games/${id}`, updatedGame)
   }
 
-  buy(id: string|number|undefined)
+  buy(id: string)
   {
-    return this.http.put(`${this.api_url}/games/${id}`, "");
+    return this.http.put(`${this.api_url}/games/${id}/buy`, null);
   }
 
   getUserWishlist()

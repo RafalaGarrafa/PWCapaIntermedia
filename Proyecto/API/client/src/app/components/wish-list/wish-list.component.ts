@@ -60,7 +60,7 @@ export class WishListComponent implements OnInit {
       res =>
       {
         console.log(res);
-        this.router.navigate(['/games']);
+        this.getGames();
         
       },
       

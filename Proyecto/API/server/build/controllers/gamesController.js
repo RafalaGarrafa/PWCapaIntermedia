@@ -38,6 +38,8 @@ class GamesController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
+            console.log("update");
+            console.log(req.body);
             yield database_1.default.query('update games set ? where id = ?', [req.body, id]);
             res.json({ text: 'juego ' + req.params.id + ' actualizado' });
         });
@@ -45,7 +47,8 @@ class GamesController {
     buy(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('update games set comprado = 1 where id = ?', [req.body, id]);
+            console.log("buy");
+            yield database_1.default.query('update games set comprado = 1 where id = ?', [id]);
             res.json({ text: 'juego ' + req.params.id + ' comprado' });
         });
     }

@@ -34,8 +34,12 @@ class GamesController
     public async update(req: Request, res: Response)
     {
         const { id }  = req.params;
-
+        console.log("update");
+        console.log(req.body);
+       
+    
         await pool.query('update games set ? where id = ?', [req.body, id]);
+        
 
         res.json({text: 'juego ' + req.params.id + ' actualizado'});
 
@@ -44,8 +48,8 @@ class GamesController
     public async buy(req: Request, res: Response)
     {
         const { id }  = req.params;
-
-        await pool.query('update games set comprado = 1 where id = ?', [req.body, id]);
+        console.log("buy");
+        await pool.query('update games set comprado = 1 where id = ?', [id]);
 
         res.json({text: 'juego ' + req.params.id + ' comprado'});
 
