@@ -1,0 +1,36 @@
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+
+            <div class="card">
+                <div class="card-body text-center">
+                    <form action="/links/perfil/{{user.id}}" method="POST">
+
+                    <img src="{{user.foto}}" alt="avatar" class="card-img-top mx-auto m-2 rounded-circle w-50">
+                        <div class="form-group">
+                            <input type="text"  name="foto" placeholder="Url de foto" value="{{user.foto}}" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="mail" placeholder="E-mail" value="{{user.mail}}" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="username" placeholder="Username"  value="{{user.username}}" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="pass" placeholder="Password" class="form-control"  value="{{user.pass}}" >
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
