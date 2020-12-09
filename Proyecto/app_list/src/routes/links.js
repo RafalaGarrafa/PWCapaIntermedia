@@ -21,13 +21,14 @@ router.post('/add',  isLogged, async(req, res) => {
 
 //cuando muestra las listas
 router.get('/', isLogged,  async (req, res) => {
-    const ll = await pool.query('select id, listname, resumen, created from list where id_usuario=?', [req.user.id]);
+    const ll = await pool.query('select id, listname, resumen, created, estatus from list where id_usuario=?', [req.user.id]);
     res.render('links/list', {links:ll});
 });
 
 //cuando elimina
 router.get('/delete/:id', isLogged, async (req, res) => {
     const {id} = req.params;
+    await pool.query('delete from list_games where id_list = ?', [id]);
     await pool.query('delete from list where id =?', [id]);
     req.flash('quedo', 'Se ha elimando 1 elemento... :c');
     res.redirect('/links');

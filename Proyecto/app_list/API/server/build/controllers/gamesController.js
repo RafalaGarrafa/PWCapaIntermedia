@@ -63,7 +63,9 @@ class GamesController {
     deletefromList(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('delete from list_games where id_game = ?', [id]);
+            const idList = yield database_1.default.query('select id_lista from ListID');
+            var idLista = idList[0].id_lista;
+            yield database_1.default.query('delete from list_games where id_game = ? and id_list = ?', [id, idLista]);
             res.json({ text: 'el juego con id ' + req.params.id + ' fue eliminao de tu lista' });
         });
     }

@@ -69,8 +69,10 @@ class GamesController
     {
 
         const { id }  = req.params;
-
-        await pool.query('delete from list_games where id_game = ?', [id]);
+        const idList = await pool.query('select id_lista from ListID');
+        var idLista = idList[0].id_lista;
+        
+        await pool.query('delete from list_games where id_game = ? and id_list = ?', [id, idLista]);
         res.json({text: 'el juego con id '  + req.params.id + ' fue eliminao de tu lista'});
 
     }
