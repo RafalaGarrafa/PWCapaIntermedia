@@ -38,3 +38,60 @@ body{
     font-size: 25px;
 }
 
+
+#listName:hover{
+    color: coral;
+}
+
+.listBack{
+    border-style: none;
+    background: none;
+}
+
+.listBack:focus{
+    outline: 0;
+}
+
+.deleteBoton{
+    background: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    color: black;
+}
+
+.editeBoton{
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+}
+
+.salvarBoton{
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 30px;
+}
+
+.salvarBoton:hover{
+    background: rgb(49, 162, 182);
+    border: none;
+}
+
+.verBoton{
+    background: rgba(255, 127, 80, 0.7);
+    border: none;
+}
+
+.verBoton:hover{
+    background: coral;
+    border: none;
+}
+
+.entraBoton{
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 30px;
+}
+
+.entraBoton:hover{
+    background: coral;
+    border: none;
+    border-radius: 30px;
+}

@@ -14,7 +14,7 @@ router.get('/add', isLogged, (req, res) => {
 router.post('/add',  isLogged, async(req, res) => {
     //const id_usu = req.user.id;
     const { title, description, estatus} = req.body;
-   await pool.query('INSERT INTO list set ?', {listname: title, resumen:description, estatus:estatus, id_usuario:req.user.id});
+    await pool.query('Insert into list set ?', {listname: title, resumen:description, estatus:estatus, id_usuario:req.user.id});
     req.flash('quedo', 'Se ha guardado correctamente!');
     res.redirect('/links');
 });
@@ -46,6 +46,15 @@ router.get('/edit/:id', isLogged, async (req, res) => {
     }
     res.render('links/edit', {link:ll[0]});
 });
+
+//cuando editó
+router.post('/go/:id', isLogged, async(req, res) => {
+    const { id } = req.params;
+    console.log(id);
+    await pool.query('Update ListID set id_lista =?', [id]);
+    res.redirect('http://localhost:4200/games');
+});
+
 
 //cuando editó
 router.post('/edit/:id', isLogged, async(req, res) => {

@@ -67,5 +67,15 @@ create table if not exists games
 );
 
 drop table games;
+drop table ListID;
 
 select * from games;
+
+create table if not exists ListID
+(
+	id_lista int default -1
+);
+
+insert into ListID set id_lista = 2;
+select * from ListID;
+
